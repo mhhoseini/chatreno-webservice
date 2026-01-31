@@ -1,0 +1,36 @@
+version: "3.7"
+services:
+  php:
+    build:
+      args:
+        user: www-data
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: chatreno-backend:latest
+    container_name: chatreno-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - chatreno
+
+  nginx:
+    image: nginx:alpine
+    container_name: chatreno-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./.configs/nginx/conf.d:/etc/nginx/conf.d/
+      - /etc/letsencrypt/:/etc/letsencrypt/
+    networks:
+      - chatreno
+    command: /usr/sbin/nginx -g "daemon off;"
+
+networks:
+  chatreno:
+    driver: bridge
+
