@@ -545,8 +545,8 @@ $config['proxy_ips'] = '';
 */
 $config['wsdl'] = 'https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl';
 $config['operationServer'] = 'https://bpm.shaparak.ir/pgwchannel/startpay.mellat';
-$config['userName'] = 'Aref404';
-$config['userPassword'] = '90641247';
-$config['callBackURL'] = 'https://api.aref24.com/peyback';
-$config['deficitCallBackURL'] = 'https://api.aref24.com/deficitpeyback';
-$config['terminalId'] = '6522580';
+$config['userName'] = '8617966';
+$config['userPassword'] = '91944150';
+$config['callBackURL'] = 'https://api.chatreno.com/peyback';
+$config['deficitCallBackURL'] = 'https://api.chatreno.com/deficitpeyback';
+$config['terminalId'] = '8617966';
